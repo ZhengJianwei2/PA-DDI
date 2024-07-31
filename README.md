@@ -20,7 +20,7 @@ Below is an example:
                 ├─test
 
 ```
-## 3. Process data ():
+## 3. Process data:
 cd PA-DDI dictory folder and execute the following script
 ```cmd
 python ./data_process/data_tansform.py
@@ -28,12 +28,11 @@ python ./data_process/data_tansform.py
 
 
 ## 4. Train
-cd PA-DDI dictory folder and execute the following script
-transductive training
+cd PA-DDI dictory folder and execute the following script for transductive training
 ```cmd
 python transductive_train.py
 ```
-indictive training
+cd PA-DDI dictory folder and execute the following script for inductive training
 ```cmd
 python inductive_train.py
 ```
