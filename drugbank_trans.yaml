@@ -1,0 +1,21 @@
+dataset: drugbank
+model:
+  num_layers: 6
+  n_atom_feats: 55
+  n_atom_hid: 128
+  kge_dim: 128
+  rel_total: 86
+subgraph:
+  hops: 3
+train:
+  epochs: 450
+  lr_patience: 50
+  lr: 1e-3
+  weight_decay: 5e-4
+data:
+  train_ddi: "./data/drugbank/f_2/train_data.csv"
+  test_ddi: "./data/drugbank/f_2/test_data.csv"
+  valid_ddi: "./data/drugbank/f_2/valid_data.csv"
+  pt_path: "./data/drugbank/processed/processed_data.pt"
+
+

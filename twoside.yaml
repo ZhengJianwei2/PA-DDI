@@ -1,0 +1,21 @@
+dataset: twoside
+model:
+  num_layers: 6
+  n_atom_feats: 55
+  n_atom_hid: 128
+  kge_dim: 128
+  rel_total: 963
+subgraph:
+  hops: 3
+train:
+  epochs: 10
+  lr_patience: 50
+  lr: 5e-3
+  weight_decay: 5e-4
+data:
+  train_ddi: "./data/twosides/f_0/train_data.csv"
+  test_ddi: "./data/twosides/f_0/test_data.csv"
+  valid_ddi: "./data/twosides/f_0/valid_data.csv"
+  pt_path: "./data/twosides/processed/twoside_graph_data.pt"
+
+
