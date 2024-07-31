@@ -8,20 +8,7 @@ This code has been tested on on the workstation with NVIDIA RTX 3090 GPU with 24
     pip install -r requirements.txt
 ## 2. Download the datesets:
 Download the datasets here and put them into data directory:
-* Kvasir-SEG:
-[Kvasir-SEG](https://www.kaggle.com/datasets/debeshjha1/kvasirseg)
-* CVC-ClinicDB:
-[CVC-ClinicDB](https://www.kaggle.com/datasets/balraj98/cvcclinicdb)
-
-
-1.) make directory named "dataset/'datasetname'"
-
-2.) make three sub-directories "train" "val" "test"
-
-3.) Put images under directory named "images"
-
-4.) Put masks under directory named "masks"
-
+[data](https://pan.baidu.com/s/1Vlb0QCcZx0YizAFXEIvjIg ) code: q5kv
 Below is an example:
 ```
 ├─data
@@ -33,40 +20,33 @@ Below is an example:
                 ├─test
 
 ```
-## 3. Download the models (loading models):
+## 3. Process data ():
+cd PA-DDI dictory folder and execute the following script
+```cmd
+python ./data_process/data_tansform.py
+```
 
-Download the pretrained 'PVTv2' model and put it into `lib/bkbone` directory.
-
-* [models](https://pan.baidu.com/s/1piOOt5yYNLc_bVc6DPU2iA ) code: h25m
-
-And the pretrained models of CGMA-Net on two ployp datasets are as follows:
-
-* [models](https://pan.baidu.com/s/1rcXsAPTR67l9U5ZashbiFA) code: 48l2
-
-please download and put them into checkpoints directory.
 
 ## 4. Train
+cd PA-DDI dictory folder and execute the following script
+transductive training
 ```cmd
-epoch=50 #default
-lr=1e-4 #default
-optimizer=AdamW #default
-batchsize=8 #default
-trainssize=352 #default
-clip=0.5 #default
-decay_rate=0.1 #default
-train_path=dataset/{your_dataset_name}/train
-test_path=dataset/{your_dataset_name}
-train_save=checkpoint/{your_dataset_name}
-Below is an example:
-python lib/train.py --train_path dataset/kvasir-seg/train --test_path dataset/kvasir-seg --train_save checkpoint/kvasir-seg
+python transductive_train.py
 ```
-    
+indictive training
+```cmd
+python inductive_train.py
+```
+Hyperparameters can be modified in the corresponding config file.
     
 ## 5. Evaluate
+Download the pretrained model.
+
+* [models](https://pan.baidu.com/s/11WTLJKugntSLKUtjsYmhOA ) code: i2ng
+  
+execute the following script
 ```cmd
-test_path=dataset/{your_dataset_name}/train
-model_path=dataset/{your_dataset_name}/{your_model_name}
-Below is an example:
-python lib/train.py --test_path dataset/kvasir-seg/test --model_path checkpoint/kvasir-seg/CGMA.pth
+python transductive_test.py
+python inductive_test.py
 ```
     
