@@ -3,7 +3,7 @@
 ## Papers
 * PA-DDI: Durg-Durg Interaction Predicting with Position Awareness
 ## 1. Environment setup
-This code has been tested on on the workstation with NVIDIA RTX 3090 GPU with 24GB of video memory, Python 3.7, pytorch 1.11.0, CUDA 11.3, cuDNN 8.2. Please install related libraries before running this code:
+This code has been tested on on the workstation with NVIDIA RTX 3090 GPU with 24GB of video memory, Python 3.7, pytorch 1.11.0. Please install related libraries before running this code:
 
     pip install -r requirements.txt
 ## 2. Download the datesets:
@@ -24,17 +24,14 @@ Download the datasets here and put them into data directory:
 
 Below is an example:
 ```
-├─dataset
-    ├─kvasir-seg
-        ├─train
-            ├─images
-            ├─masks
-        ├─val
-            ├─images
-            ├─masks
-        └─test
-            ├─images
-            ├─masks
+├─data
+    ├─durgbank
+        ├─transductive
+            ├─f_0
+                ├─train
+                ├─val
+                ├─test
+
 ```
 ## 3. Download the models (loading models):
 
